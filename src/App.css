@@ -1,0 +1,171 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  width: 520px;
+  min-height: 600px;
+  background: #000000;
+  text-align: center;
+  margin: 128px auto;
+  border-radius: 10px;
+  padding-bottom: 32px;
+}
+
+.add-body input {
+  padding: 14px 32px 14px 16px;
+  border-radius: 4px 0 0 4px;
+  border: 2px solid #5d0cff;
+  outline: none;
+  width: 320px;
+  background: transparent;
+  color: #fff;
+}
+input::placeholder{
+  color: #e2e2e2;
+}
+
+.add-body button {
+  padding: 16px;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  outline: none;
+  background: linear-gradient(
+          90deg,
+          rgba(93, 12, 255, 1) 0%,
+          rgba(155, 0, 250, 1) 100%
+  );
+  color: #fff;
+  text-transform: capitalize;
+}
+
+.root{
+  border-radius: 10px;
+  height: 80px;
+  font-size: 24px;
+  color: white;
+  background: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.list-body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 4px auto;
+  color: #fff;
+  padding: 16px;
+  border-radius: 5px;
+  width: 90%;
+  background: linear-gradient(
+          90deg,
+          rgba(93, 12, 255, 1) 0%,
+          rgba(155, 0, 250, 1) 100%
+  );
+}
+
+
+
+.button-body button{
+  margin: 0 0 0 5px;
+  font-size: 21px;
+  background: cornflowerblue;
+  height: 40px;
+  border-radius: 7px;
+  cursor: pointer;
+}
+.list-body input {
+  padding: 14px 32px 14px 16px;
+  border-radius: 4px 0 0 4px;
+  border: 2px solid floralwhite;
+  outline: none;
+  width: 320px;
+  background: transparent;
+  color: #fff;
+}
+.save-todo {
+  margin: 0 0 0 5px;
+  font-size: 21px;
+  background: cornflowerblue;
+  height: 40px;
+  border-radius: 7px;
+  cursor: pointer;
+}
+.close {
+  color: #000000;
+  text-decoration: line-through;
+}
+.menu-body {
+  display: flex;
+  margin: 20px auto 35px auto;
+}
+.menu {
+  font-size: 21px;
+  color: white;
+  border-left: 2px solid white;
+  padding: 0 15px;
+  cursor: pointer;
+}
+.menu:nth-child(1) {
+  border-left: none;
+}
+.menu:hover {
+  color: #5d0cff;
+}
+
+@media only screen and (max-width: 520px) {
+  .App {
+    width: 400px;
+  }
+  .add-body input {
+    width: 200px;
+  }
+  .menu {
+    font-size: 16px;
+  }
+  .list-body {
+    padding: 10px;
+    width: 80%;
+  }
+  .list-body input {
+    width: 200px;
+  }
+
+}
+
+
+@media only screen and (max-width: 345px) {
+  .App {
+    width: 320px;
+  }
+  .add-body input {
+    max-width: 300px;
+    border-radius: 4px;
+  }
+  .add-body button {
+    margin-top: 5px;
+    border-radius: 4px;
+  }
+  .menu {
+    font-size: 14px;
+  }
+  .button-body button {
+    font-size: 9px;
+    height: 29px;
+  }
+  .save-todo {
+    font-size: 9px;
+    height: 29px;
+  }
+
+  .list-body {
+    padding: 10px;
+    width: 70%;
+  }
+  .list-body input {
+    width: 130px;
+    padding: 5px 32px 5px 8px;
+  }
+}
