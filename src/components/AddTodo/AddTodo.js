@@ -22,7 +22,7 @@ function AddTodo({todo, setTodo}) {
 
   return (
     <div className="add-body">
-        <input placeholder='Введите задачу' value={value} onChange={ (e)=>setValue(e.target.value)}/>
+        <input placeholder='Введите задачу' maxLength="20" value={value} onChange={ (e)=>setValue(e.target.value)}/>
         <button onClick={saveTodo}>Сохранить</button>
     </div>
   );

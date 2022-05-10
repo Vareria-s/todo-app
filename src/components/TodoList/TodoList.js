@@ -63,7 +63,7 @@ function TodoList({todo, setTodo}) {
                 {
                   edit === item.id ?
                       <div>
-                        <input placeholder='Поменять задачу' value={value} onChange={ (e)=>setValue((e.target.value))}/>
+                        <input placeholder='Поменять задачу' maxLength="20" value={value} onChange={ (e)=>setValue((e.target.value))}/>
                       </div>
                       :<div className={ item.status ? "" : "close"}>{ item.title }</div>
                 }
