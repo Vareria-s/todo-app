@@ -1,9 +1,16 @@
 import './../../App.css';
-import React, {useEffect, useState} from "react";
+import React, {FC, useEffect, useState} from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faEdit, faLock, faLockOpen, faSave, faTrash} from '@fortawesome/free-solid-svg-icons'
+import TODOI from "../../Todointerface/Todointerface";
 
-function TodoList({todo, setTodo}) {
+
+interface Props {
+  setTodo(todo: TODOI[]): void;
+  todo: TODOI[];
+}
+
+const TodoList: FC<Props> = ({todo, setTodo}) => {
   const [edit, setEdit] = useState(null)
   const [value, setValue] = useState('')
   const [filter, setFilter] = useState(todo)
@@ -12,7 +19,7 @@ function TodoList({todo, setTodo}) {
         setFilter(todo)
   }, [todo])
 
-  function todoFilter(status) {
+  function todoFilter(status:any): void {
     if(status === 'all') {
       setFilter(todo)
     } else {
@@ -21,12 +28,12 @@ function TodoList({todo, setTodo}) {
     }
   }
 
-  function deleteTodo(id) {
+  function deleteTodo(id:number): void {
     let newTodo = [...todo].filter(item => item.id!==id)
     setTodo(newTodo)
   }
 
-  function statusTodo(id) {
+  function statusTodo(id:number): void {
     let newTodo = [...todo].filter(item =>{
       if(item.id === id) { item.status = !item.status}
       return item
@@ -34,12 +41,12 @@ function TodoList({todo, setTodo}) {
     setTodo(newTodo)
   }
 
-  function editTodo(id, title) {
+  function editTodo(id:any, title:string): void {
     setEdit(id)
     setValue(title)
   }
 
-  function saveTodo(id) {
+  function saveTodo(id:number) {
     let newTodo = [...todo].map(item=> {
       if(item.id === id) {
         item.title = value
@@ -63,7 +70,7 @@ function TodoList({todo, setTodo}) {
                 {
                   edit === item.id ?
                       <div>
-                        <input placeholder='Поменять задачу' maxLength="20" value={value} onChange={ (e)=>setValue((e.target.value))}/>
+                        <input placeholder='Поменять задачу' value={value} onChange={ (e)=>setValue((e.target.value))}/>
                       </div>
                       :<div className={ item.status ? "" : "close"}>{ item.title }</div>
                 }

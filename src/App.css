@@ -11,7 +11,7 @@
   padding-bottom: 32px;
 }
 
-.add-body input {
+.add-body input:nth-child(1) {
   padding: 14px 32px 14px 16px;
   border-radius: 4px 0 0 4px;
   border: 2px solid #5d0cff;
@@ -24,7 +24,7 @@ input::placeholder{
   color: #e2e2e2;
 }
 
-.add-body button {
+.add-body input:nth-child(2) {
   padding: 16px;
   border: none;
   border-radius: 0 4px 4px 0;
@@ -119,7 +119,7 @@ input::placeholder{
   .App {
     width: 400px;
   }
-  .add-body input {
+  .add-body input:nth-child(1) {
     width: 200px;
   }
   .menu {
@@ -144,11 +144,11 @@ input::placeholder{
   .App {
     width: 320px;
   }
-  .add-body input {
+  .add-body input:nth-child(1) {
     max-width: 300px;
     border-radius: 4px;
   }
-  .add-body button {
+  .add-body input:nth-child(2) {
     margin-top: 5px;
     border-radius: 4px;
   }
